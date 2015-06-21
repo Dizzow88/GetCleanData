@@ -31,9 +31,19 @@ data.ytst: y_test.txt
 
 
 ### 1. Merges the training and the test sets to create one data set
-Text
+data.TRN: Column bind of data.ytrn,data.subj.trn,data.xtrn
+data.TST: Column bind of data.ytst,data.subj.tst,data.xtst
+data.FINAL=data.TRN+data.TST
 
-### 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+### 2. Extracts only the measurements on the mean and standard deviation for each measurement
+Logic.Vector is a boolean vector compiled with the RegEx grepl function on key fields
+data.FINAL is reset based on Logic Vector
+
 ### 3. Uses descriptive activity names to name the activities in the data set
-### 4. Appropriately labels the data set with descriptive variable names. 
+data.FINAL is merged with the data.actv data frame using the merge command
+
+### 4. Appropriately labels the data set with descriptive variable names
+THe names of the data.FINAL data frame are iterated through, replacing confusing text
+
 ### 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+Activity type is subsetted out followed by aggregation and merge
