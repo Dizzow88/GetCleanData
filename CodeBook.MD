@@ -43,7 +43,7 @@ data.FINAL is reset based on Logic Vector
 data.FINAL is merged with the data.actv data frame using the merge command
 
 ### 4. Appropriately labels the data set with descriptive variable names
-THe names of the data.FINAL data frame are iterated through, replacing confusing text
+The names of the data.FINAL data frame are iterated through, replacing confusing text
 
 ### 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 Activity type is subsetted out followed by aggregation and merge
